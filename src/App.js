@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import { React } from "react";
 
-function App() {
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+
+import BlogPost from "./components/blogPost";
+import SignUp from "./components/signup";
+import Login from "./components/login";
+import RootLayout from "./layouts/RootLayout";
+import NewBlog from "./components/newBlog";
+import UpdateBlog from "./components/UpdateBlog";
+import TogglePage from "./components/TogglePage";
+import UserProfile from "./components/UserProfile";
+import BlogpostLayout from "./layouts/BlogpostLayout";
+import BlogDetails from "./components/BlogDetails";
+import { LoginProvider } from "./LoginContext";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<TogglePage />} />
+      <Route path="blogposts" element={<BlogpostLayout />}>
+        <Route index element={<BlogPost />} />
+        <Route path=":id" element={<BlogDetails />} />
+        <Route path="update/:id" element={<UpdateBlog />} />
+      </Route>
+      <Route path="signup" element={<SignUp />} />
+      <Route path="login" element={<Login />} />
+      <Route path="user" element={<UserProfile />} />
+      <Route path="create" element={<NewBlog />} />
+    </Route>
+  )
+);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LoginProvider>
+      <RouterProvider router={router} />
+    </LoginProvider>
   );
-}
+};
 
 export default App;
+
+/* <div>
+        <BlogPost />
+        // {/* <SignUp /> */
+// {/* <Login /> */}
+// </div> */}

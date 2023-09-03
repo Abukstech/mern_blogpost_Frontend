@@ -1,13 +1,85 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+header nav {
+  display: flex;
+  gap: 16px;
+  justify-content: end;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+header nav a {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+  color: #043323;
+}
+
+header nav a:hover {
+  color: #55daea;
+}
+
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.blog-layout nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.blog-layout .yipada {
+  margin-top: -30px;
+  font-weight: bold;
+  font-size: 25px;
+  color: whitesmoke;
+  border: 2px solid black;
+  text-decoration: none;
+  background-color: #043323;
+  width: 15%;
+  padding-left: 25px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+}
+
+.blog-layout nav a {
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.blog-layout nav a:hover {
+  border-color: blue;
+}
+
+.blog-details {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.blog-details h4 {
+  font-family: cursive;
+}
+
+.blog-details .content {
+  font-weight: normal;
+  font-size: 25px;
 }

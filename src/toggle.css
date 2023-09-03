@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.toggle-card {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+.btn {
+  margin-left: 480px;
+  padding: 10px 10px;
+  background-color: hsl(183, 100%, 15%);
+  color: azure;
+}
+
+.btn:hover {
+  background-color: azure;
+  color: hsl(183, 100%, 15%);
+}
+
+@media (max-width: 414px) {
+  .btn {
+    display: block;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
